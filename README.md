@@ -29,12 +29,17 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. What is React JS and what problems does it solve? Support your answer with concepts introduced in class and from your personal research on the web.
+React JS allows us to write HTML elements in JavaScript and place them in the DOM without any createElement()  and/or appendChild() methods.
 
 1. Describe component state.
+Components are independent and reusable bits of code. 
+They serve the same purpose as JavaScript functions, but work in isolation and returns HTML via a render function.
 
 1. Describe props.
+Props are arguments passed into React components.
 
 1. What are side effects, and how do you sync effects in a React component to changes of certain state or props?
+A side effect is anything that affects something outside the scope of the function being executed. Fetching data from an API, timers, logging, and manually manipulating the DOM are all examples of side effects.
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
