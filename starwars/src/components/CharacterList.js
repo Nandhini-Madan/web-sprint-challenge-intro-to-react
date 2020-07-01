@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Character from "./Character";
 
 //styled components
 const Title = styled.h1`
@@ -20,6 +21,7 @@ const CharacterList=({Name,url,mass,films,Gender})=>{
             <Pag>Mass: {mass}</Pag>
             <p>URL: {url}</p>
             <p>Gender:{Gender} </p>
+         
             
         </div>
     )

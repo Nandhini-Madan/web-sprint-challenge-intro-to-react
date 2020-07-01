@@ -2,23 +2,24 @@
 import React,{useEffect,useState} from "react";
 import axios from "axios";
 import CharacterList from "./CharacterList";
+import styled from "styled-components";
 
 export default function Character(){
     const [Characters,SetCharacter]=useState([]);
-   const number=1;
+   const number=[1,2,3];
    
     useEffect(()=>{
-      // number.forEach(num=>{
+       number.forEach(num=>{
         axios
-        .get(`https://swapi.dev/api/people/${number}/`)
+        .get(`https://swapi.dev/api/people/${num}/`)
         .then(res=>{
             console.log("Starwars",res);
-            SetCharacter(res.data);
+            SetCharacter(Characters.res.data);
         })
         .catch(err=>{
             console.log("Error Occured",err);
         });
-     //  })
+       })
    
        
 },[]);
@@ -26,7 +27,7 @@ export default function Character(){
 
     return(<div>
 
-        <CharacterList key={Characters.id} Name={Characters.name} url={Characters.url} mass={Characters.mass} films={Characters.films}
+        <CharacterList key={Characters.res.data.id} Name={Characters.res.data.name} url={Characters.res.data.url} mass={Characters.res.data.mass} films={Characters.res.data.films}
 
         Gender={Characters.gender}
          />
