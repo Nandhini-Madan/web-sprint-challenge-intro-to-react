@@ -14,7 +14,8 @@ export default function Character(){
         .get(`https://swapi.dev/api/people/${num}/`)
         .then(res=>{
             console.log("Starwars",res);
-            SetCharacter(Characters.res.data);
+            SetCharacter([...Characters, res.data]);
+            
         })
         .catch(err=>{
             console.log("Error Occured",err);
@@ -25,13 +26,16 @@ export default function Character(){
 },[]);
     
 
-    return(<div>
+    return(
+    <div>
+        {console.log("Character",Characters)}
+        {Characters.map(p=>(
 
-        <CharacterList key={Characters.res.data.id} Name={Characters.res.data.name} url={Characters.res.data.url} mass={Characters.res.data.mass} films={Characters.res.data.films}
+        <CharacterList key={p.id} Name={p.name} url={p.url} mass={p.mass} films={p.films}
 
-        Gender={Characters.gender}
+        Gender={p.gender}
          />
-    
+         ) )}
     
     </div>)
 
